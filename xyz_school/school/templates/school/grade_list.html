@@ -1,0 +1,23 @@
+{% extends "common/base.html" %} {% block content %}
+<h2>Grade List</h2>
+<table id="grades">
+    <tr>
+        <th>Grade Name</th>
+        <th>School Name</th>
+        <th>Total Student</th>
+
+    </tr>
+    <tr>
+        {% for grade in grade_list %}
+    </tr>
+    <tr>
+        <td>{{ grade.name }}</td>
+        <td>{{ grade.school }}</td>
+        <td>{{ grade.total_student }}</td>
+        <!-- Add your code below -->
+        <td><a href="{% url 'gradeupdate' grade.id %}">Edit</a></td>
+        <td><a href="{% url 'gradedelete' grade.id %}">Delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'common/base.html' %} {% block content %}
+<h2>Delete Student</h2>
+<form method="post">
+    <div>
+        {% csrf_token %}
+        <p>Are you sure you want to delete "{{ object.first_name }}{{object.middle_name}} {{ object.last_name }}"?</p>
+        <input type="submit" value="Confirm" />
+    </div>
+</form>
+{% endblock %}
